@@ -6,19 +6,16 @@ namespace AutomationTest.Hooks
     [Binding]
     public sealed class Hook
     {
-        private static readonly ThreadLocal<IWebDriver> _driverLocal = new();
-        public IWebDriver _driver;
-        internal static IWebDriver GetDriver()
-        {
-            return _driverLocal.Value!;
-        }
+        public static IWebDriver Driver;
 
         [BeforeScenario("@tag1")]
-        public void BeforeScenarioWithTag()
+        public static void BeforeScenarioWithTag()
         {
             var options = new ChromeOptions();
             options.AddArgument("--lang=en-EN");
-            _driver = new ChromeDriver(options);
+            options.AddArgument("--start-maximized");
+            Driver = new ChromeDriver(options);
+
         }
 
         [BeforeScenario(Order = 1)]
@@ -33,7 +30,7 @@ namespace AutomationTest.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-            _driver.Quit();
+            Driver.Quit();
         }
     }
 }

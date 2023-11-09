@@ -1,17 +1,15 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using AutomationTest.Hooks;
 
 namespace AutomationTest.StepDefinitions
 {
     [Binding]
     public sealed class TestSteps
     {
-        WebDriver driver;
-
         [Given(@"Go to sport\.pl page")]
         public void GivenGoToSport_PlPage()
         {
-            Hooks.Hook.GetDriver().Navigate().GoToUrl("https://bonigarcia.dev/webdrivermanager/");
+            AutomationTest.Hooks.Hook.Driver!.Navigate().GoToUrl("https://stackoverflow.com/questions/12211781/how-to-maximize-window-in-chrome-using-webdriver-python");
         }
 
     }

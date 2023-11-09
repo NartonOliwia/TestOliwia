@@ -105,9 +105,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
  testRunner.Given("Go to sport.pl page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 6
- testRunner.And("adsfsssssssssssss", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
             }
             this.ScenarioCleanup();
         }
