@@ -16,4 +16,4 @@ jobs:
   - name: Checkout
     uses: actions/checkout@v2
   - name: Run tests
-    run: dotnet test AutomationTest
+    run: dotnet test AutomationTest --allowed-ips
