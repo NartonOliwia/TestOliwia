@@ -16,6 +16,4 @@ jobs:
   - name: Checkout
     uses: actions/checkout@v2
   - name: Run tests
-    run: dotnet test
-
-     
+    run: dotnet test AutomationTest
