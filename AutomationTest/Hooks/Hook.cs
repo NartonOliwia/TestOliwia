@@ -14,6 +14,8 @@ namespace AutomationTest.Hooks
             var options = new ChromeOptions();
             options.AddArgument("--lang=en-EN");
             options.AddArgument("--start-maximized");
+            options.AddArgument("--start-maximized");
+            options.AddArgument("--remote-allow-origins=*");
             Driver = new ChromeDriver(options);
 
         }
